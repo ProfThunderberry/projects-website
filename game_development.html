@@ -2,26 +2,19 @@
 <html>
 	<head>
 		<title>My Projects - Game Development</title>
-		<link rel="stylesheet" href="style.css">
+		<meta charset="utf-8">
+		<!--
 		<link rel="icon" type="image/png" href="website_icon.png">
+		-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<link rel="stylesheet" href="style.css">
+		
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script src="script.js"></script>		
 	</head>
 	<body>
-		<div class="navbar">
-			<div class="left-align">
-				<a href="javascript:void(0);" onclick="openMenu(this)" title="Menu">MENU</a>
-				
-				<a href="index.html" title="Home">HOME</a>
-				<a href="computer_architecture.html" title="Computer Architecture">COMPUTER ARCHITECTURE</a>
-				<a href="neural_networks.html" title="Neural Networks">NEURAL NETWORKS</a>
-				<a class="active" href="game_development.html" title="Game Development">GAME DEVELOPMENT</a>
-			</div>
-			
-			<div class="right-align">
-				<a href="javascript:void(0);" onclick="changeTheme(this)" title="Switch to dark mode">DARK MODE</a>
-				<a href="javascript:void(0);" onclick="translate(this)" title="Translate">TRANSLATE</a>
-				<a href="javascript:void(0);" onclick="search(this)" title="Search">SEARCH</a>
-			</div>
-		</div>
+		<div id="navbar-placeholder"></div>
+		
 		<div class="main-div">
 			<h1 class="pad-top">
 				Game Development
