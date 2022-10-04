@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Projects</title>
+		<meta charset="utf-8">
+		<!--
+		<link rel="icon" type="image/png" href="website_icon.png">
+		<link rel="javascript" href="script.js">
+		-->
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<!--
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			$.get("navbar.html", function(data){
+				$("#navbar-placeholder").replaceWith(data);
+			});
+		</script>
+		-->
+	</head>
+	<body>
+		<!--
+		<div id="navbar-placeholder">
+		-->
+
+		<div class="navbar">
+			<div>
+				<a class="menu" href="javascript:void(0);" onclick="openMenu()" title="Menu">
+					<i class="fa-solid fa-bars"></i>
+				</a>
+				
+				<a class="active" href="index.html" title="Home">
+					<i class="fa-solid fa-house"></i>
+				</a>
+				<a class="menu-item" href="computer_architecture.html" title="Computer Architecture">COMPUTER ARCHITECTURE</a>
+				<a class="menu-item" href="neural_networks.html" title="Neural Networks">NEURAL NETWORKS</a>
+				<a class="menu-item" href="game_development.html" title="Game Development">GAME DEVELOPMENT</a>
+			</div>
+			
+			<div>
+				<a href="javascript:void(0);" onclick="search()" title="Search">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</a>
+				<a href="javascript:void(0);" onclick="changeTheme()" title="Switch to dark mode">
+					<i class="fa-solid fa-moon"></i>
+				</a>
+				<a href="javascript:void(0);" onclick="translate()" title="Translate">
+					<i class="fa-solid fa-globe"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="main-div">
+			<h1 class="pad-top">
+				Home Page
+			</h1>
+			<p>
+				Hello, I'm Edward Green, and this is a website to document my projects that I've worked on over the years. This includes a wide variety of projects, such as designing <a href="computer_architecture.html">Computer Architecture</a>, simulating a <a href="neural_networks.html">Neural Network</a>, and doing some <a href="game_development.html">Game Development</a>.
+			</p>
+			<ul class="pad-bottom">
+			<!--
+			<li><a href="index.html">Home</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+			-->
+			</ul>
+		</div>
+	</body>
+</html>
