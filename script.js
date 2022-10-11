@@ -1,4 +1,4 @@
-function loadNavbar() {
+function load() {
 	
 	const filePath = this.location.pathname;
 	const fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
