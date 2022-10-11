@@ -8,6 +8,6 @@ function loadNavbar() {
 	
 	$.get(navbarFilePath, function(data){
 		console.log(data);
-		$("nav.navbar-placeholder").replaceWith(data);
+		$("nav").replaceWith(data);
 	});
 }
