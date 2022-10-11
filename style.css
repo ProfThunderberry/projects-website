@@ -8,18 +8,18 @@ body {
 /* Navbar Stuff */
 
 @media screen and (max-width: 749px) {
-	div.navbar div a.menu-item {
+	nav div a.menu-item {
 		display: none
 	}
 }
 
 @media screen and (min-width: 750px) {
-	div.navbar div a.menu {
+	nav div a.menu {
 		display: none
 	}
 }
 
-div.navbar {
+nav {
 	background-color: #1d222d;
 	width: 100%;
 	height: 50px;
@@ -29,12 +29,12 @@ div.navbar {
 	justify-content: space-between;
 }
 
-div.navbar div {
+nav div {
 	height: 50px;
 	display: flex;
 }
 
-div.navbar div a {
+nav div a {
 	height: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -45,16 +45,16 @@ div.navbar div a {
 	font-weight: bold;
 }
 
-div.navbar div a:hover {
+nav div a:hover {
 	background-color: #2d323d;
 }
 
-div.navbar div a.active {
+nav div a.active {
 	background-color: #04aa6d;
 }
 
 /* Main Text */
-div.main-div {
+main {
 	background-color: #1d222d;
 	padding-left: 5%;
 	padding-right: 5%;
