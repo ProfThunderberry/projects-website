@@ -4,8 +4,12 @@ function load() {
 	const filePath = this.location.pathname;
 	const fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
 
+	let fileId;
+	if (!(fileName === "index.html" || fileName === "")) fileId = "index";
+	else fileId = fileName.substring(0, fileName.length - ".html".length);
+
 	let filePathPrefix = "";
-	if (!(fileName === "index.html" || fileName === "")) filePathPrefix = "../";
+	if (fileId === "index") filePathPrefix = "../";
 	
 	const navFilePath = filePathPrefix + "features/nav.html";
 	const headFilePath = filePathPrefix + "features/head.html";
@@ -15,6 +19,7 @@ function load() {
 		console.log("Navbar: " + data);
 		$("nav").replaceWith(data);
 	});
+	$("#" + fileId).addClass("active");
 
 	// Load head
 	$.get(headFilePath, (data) => {
