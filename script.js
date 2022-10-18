@@ -10,13 +10,13 @@ function load() {
 	const navFilePath = filePathPrefix + "features/nav.html";
 	const headFilePath = filePathPrefix + "features/head.html";
 	
-    // Load navbar
+	// Load navbar
 	$.get(navFilePath, (data) => {
 		$("nav").replaceWith(data);
 	});
 
-    // Load head
+	// Load head
 	$.get(headFilePath, (data) => {
-		$("title").after(data);
+		$("script").before(data);
 	});
 }
