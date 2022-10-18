@@ -12,11 +12,13 @@ function load() {
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
+		console.log("Navbar: " + data);
 		$("nav").replaceWith(data);
 	});
 
 	// Load head
 	$.get(headFilePath, (data) => {
+		console.log("Head: " + data);
 		$("script").before(data);
 	});
 }
