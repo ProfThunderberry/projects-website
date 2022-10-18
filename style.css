@@ -8,7 +8,7 @@ body {
 /* Navbar Stuff */
 
 @media screen and (max-width: 749px) {
-	nav div a.menu-item {
+	nav div a.menu_item {
 		display: none
 	}
 }
