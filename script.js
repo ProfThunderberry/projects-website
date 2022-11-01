@@ -34,9 +34,10 @@ function load() {
 	$.get(navFilePath, (data) => {
 		$("nav").replaceWith(data);
 	});
-	$("#" + fileId).addClass("active");
 	$("#index").href = filePathPrefix + $("#index").href;
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
+	console.log("#" + fileId);
+	$("#" + fileId).addClass("active");
 	console.log("Navbar: " + data);
 
 }
