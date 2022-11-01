@@ -24,7 +24,7 @@ function load() {
 			titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[i].substring(1);
 		}
 		console.log($("title"));
-		$("title") += " - " + titleWords.join(" ");
+		$("title").text($("title").text() + " - " + titleWords.join(" "));
 	}
 	console.log($("#icon"));
 	console.log($("#style"));
