@@ -38,6 +38,6 @@ function load() {
 	console.log($("#index"));
 	$("#index").href = filePathPrefix + $("#index").href;
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
-	console.log($("#index"));
-	$("#index").addClass("active");
+	console.log($("#" + fileId));
+	$("#" + fileId).addClass("active");
 }
