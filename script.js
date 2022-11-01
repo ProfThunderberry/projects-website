@@ -21,7 +21,7 @@ function load() {
 	if (fileId !== "index") {
 		let titleWords = fileId.split("_")
 		for (let w = 0; w <= titleWords.length; w++) {
-			titleWords[w][0] = titleWords[w][0].toUpperCase();
+			titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[i].substring(1);
 		}
 		console.log($("title"));
 		$("title") += " - " + titleWords.join(" ");
