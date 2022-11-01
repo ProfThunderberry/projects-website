@@ -18,17 +18,15 @@ function load() {
 	$.get(headFilePath, (data) => {
 		$("script").first().before(data);
 	});
-	let fileWords;
 	if (fileId !== "index") {
-		fileWords = fileId.split("_")
-		for (let w = 0; w <= fileWords.length; w++) {
-			fileWords[w][0] = fileWords[w][0].toUpperCase();
+		let titleWords = fileId.split("_")
+		for (let w = 0; w <= titleWords.length; w++) {
+			titleWords[w][0] = titleWords[w][0].toUpperCase();
 		}
-		$("title") += " - " + fileWords.join(" ");
+		$("title") += " - " + titleWords.join(" ");
 	}
 	$("#icon").href = filePathPrefix + $("#icon").href;
 	$("#style").href = filePathPrefix + $("#style").href;
-	console.log("Head: " + data);
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
@@ -38,6 +36,4 @@ function load() {
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
 	console.log("#" + fileId);
 	$("#" + fileId).addClass("active");
-	console.log("Navbar: " + data);
-
 }
