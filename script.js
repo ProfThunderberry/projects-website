@@ -16,7 +16,6 @@ function load() {
 	
 	// Load head
 	$.get(headFilePath, (data) => {
-		console.log("Head: " + data);
 		$("script").first().before(data);
 	});
 	const fileWords;
@@ -25,16 +24,19 @@ function load() {
 		for (let w = 0; w <= fileWords.length; w++) {
 			fileWords[w][0] = fileWords[w][0].toUpperCase();
 		}
-		$("title").first() += " - " + fileWords.join(" ");
+		$("title") += " - " + fileWords.join(" ");
 	}
 	$("#icon").href = filePathPrefix + $("#icon").href;
 	$("#style").href = filePathPrefix + $("#style").href;
+	console.log("Head: " + data);
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
-		console.log("Navbar: " + data);
 		$("nav").replaceWith(data);
 	});
 	$("#" + fileId).addClass("active");
+	$("#index").href = filePathPrefix + $("#index").href;
+	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
+	console.log("Navbar: " + data);
 
 }
