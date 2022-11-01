@@ -5,7 +5,7 @@ function load() {
 	const fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
 
 	let fileId;
-	if (!(fileName === "index.html" || fileName === "")) fileId = "index";
+	if (fileName === "index.html" || fileName === "") fileId = "index";
 	else fileId = fileName.substring(0, fileName.length - ".html".length);
 
 	let filePathPrefix = "../";
@@ -14,6 +14,12 @@ function load() {
 	const navFilePath = filePathPrefix + "features/nav.html";
 	const headFilePath = filePathPrefix + "features/head.html";
 	
+	// Load head
+	$.get(headFilePath, (data) => {
+		console.log("Head: " + data);
+		$("script").before(data);
+	});
+	
 	// Load navbar
 	$.get(navFilePath, (data) => {
 		console.log("Navbar: " + data);
@@ -21,9 +27,4 @@ function load() {
 	});
 	$("#" + fileId).addClass("active");
 
-	// Load head
-	$.get(headFilePath, (data) => {
-		console.log("Head: " + data);
-		$("script").before(data);
-	});
 }
