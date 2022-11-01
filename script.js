@@ -18,7 +18,7 @@ function load() {
 	$.get(headFilePath, (data) => {
 		$("script").first().before(data);
 	});
-	const fileWords;
+	let fileWords;
 	if (fileId !== "index") {
 		fileWords = fileId.split("_")
 		for (let w = 0; w <= fileWords.length; w++) {
