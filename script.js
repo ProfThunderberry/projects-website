@@ -28,15 +28,15 @@ function load() {
 	}
 	console.log($("#icon"));
 	console.log($("#style"));
-	$("#icon").href = filePathPrefix + $("#icon").href;
-	$("#style").href = filePathPrefix + $("#style").href;
+	$("#icon").attr("href", filePathPrefix + $("#icon").attr("href"));
+	$("#style").attr("href", filePathPrefix + $("#style").attr("href"));
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
 		$("nav").replaceWith(data);
 	});
 	console.log($("#index"));
-	$("#index").href = filePathPrefix + $("#index").href;
+	$("#index").attr("href", filePathPrefix + $("#index").attr("href"));
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
 	console.log($("#" + fileId));
 	$("#" + fileId).addClass("active");
