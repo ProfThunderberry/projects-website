@@ -11,14 +11,24 @@ function load() {
 	let filePathPrefix = "../";
 	if (fileId === "index") filePathPrefix = "";
 	
-	const navFilePath = filePathPrefix + "features/nav.html";
 	const headFilePath = filePathPrefix + "features/head.html";
+	const navFilePath = filePathPrefix + "features/nav.html";
 	
 	// Load head
 	$.get(headFilePath, (data) => {
 		console.log("Head: " + data);
-		$("script").before(data);
+		$("script").first().before(data);
 	});
+	const fileWords;
+	if (fileId !== "index") {
+		fileWords = fileId.split("_")
+		for (let w = 0; w <= fileWords.length; w++) {
+			fileWords[w][0] = fileWords[w][0].toUpperCase();
+		}
+		$("title").first() += " - " + fileWords.join(" ");
+	}
+	$("#icon").href = filePathPrefix + $("#icon").href;
+	$("#style").href = filePathPrefix + $("#style").href;
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
