@@ -23,8 +23,11 @@ function load() {
 		for (let w = 0; w <= titleWords.length; w++) {
 			titleWords[w][0] = titleWords[w][0].toUpperCase();
 		}
+		console.log($("title"));
 		$("title") += " - " + titleWords.join(" ");
 	}
+	console.log($("#icon"));
+	console.log($("#style"));
 	$("#icon").href = filePathPrefix + $("#icon").href;
 	$("#style").href = filePathPrefix + $("#style").href;
 	
@@ -32,8 +35,9 @@ function load() {
 	$.get(navFilePath, (data) => {
 		$("nav").replaceWith(data);
 	});
+	console.log($("#index"));
 	$("#index").href = filePathPrefix + $("#index").href;
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
-	console.log("#" + fileId);
-	$("#" + fileId).addClass("active");
+	console.log($("#index"));
+	$("#index").addClass("active");
 }
