@@ -20,7 +20,7 @@ function load() {
 	});
 	if (fileId !== "index") {
 		let titleWords = fileId.split("_")
-		for (let w = 0; w <= titleWords.length; w++) {
+		for (let w = 0; w < titleWords.length; w++) {
 			titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[w].substring(1);
 		}
 		console.log($("title"));
