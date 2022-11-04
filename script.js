@@ -27,8 +27,6 @@ $(document).ready(() => {
 		console.log($("title"));
 		$("title").text($("title").text() + " - " + titleWords.join(" "));
 	}
-	console.log($("#icon"));
-	console.log($("#style"));
 	$("#icon").attr("href", filePathPrefix + $("#icon").attr("href"));
 	$("#style").attr("href", filePathPrefix + $("#style").attr("href"));
 	
@@ -36,10 +34,8 @@ $(document).ready(() => {
 	$.get(navFilePath, (data) => {
 		$("nav").replaceWith(data);
 	});
-	console.log($("#index"));
 	$("#index").attr("href", filePathPrefix + $("#index").attr("href"));
-	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
-	console.log($("#" + fileId));
+	if (fileId === "index") $(".menu_item").attr("href", "pages/" + $(".menu_item").attr("href"));
 	$("#" + fileId).addClass("active");
 	
 	$.ajaxSetup({async:true});
