@@ -1,4 +1,4 @@
-function load() {
+$(document).ready(() => {
 	
 	// Work out where file is
 	const filePath = this.location.pathname;
