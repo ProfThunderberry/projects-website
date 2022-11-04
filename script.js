@@ -40,4 +40,4 @@ $(document).ready(() => {
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
 	console.log($("#" + fileId));
 	$("#" + fileId).addClass("active");
-}
+})
