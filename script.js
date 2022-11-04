@@ -1,4 +1,5 @@
 $(document).ready(() => {
+	$.ajaxSetup({async:false});
 	
 	// Work out where file is
 	const filePath = this.location.pathname;
@@ -15,7 +16,7 @@ $(document).ready(() => {
 	const navFilePath = filePathPrefix + "features/nav.html";
 	
 	// Load head
-	$.get(headFilePath, (data) => {
+	await $.get(headFilePath, (data) => {
 		$("script").first().before(data);
 	});
 	if (fileId !== "index") {
@@ -40,4 +41,6 @@ $(document).ready(() => {
 	if (fileId === "index") $(".menu_item").href = "pages/" + $(".menu_item").href;
 	console.log($("#" + fileId));
 	$("#" + fileId).addClass("active");
+	
+	$.ajaxSetup({async:true});
 })
