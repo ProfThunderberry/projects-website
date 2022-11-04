@@ -16,7 +16,7 @@ $(document).ready(() => {
 	const navFilePath = filePathPrefix + "features/nav.html";
 	
 	// Load head
-	await $.get(headFilePath, (data) => {
+	$.get(headFilePath, (data) => {
 		$("script").first().before(data);
 	});
 	if (fileId !== "index") {
