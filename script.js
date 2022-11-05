@@ -39,8 +39,10 @@ $(document).ready(() => {
 	$("#" + fileId).addClass("active");
 	
 	// Format main
-	$("main").children()[0].addClass("pad-top");
-	$("main").children()[-1].addClass("pad-bottom");
+	// $("main").children()[0].addClass("pad-top");
+	// $("main").children()[-1].addClass("pad-bottom");
+	
+	console.log($("main").children());
 	
 	$.ajaxSetup({async:true});
 })
