@@ -44,10 +44,10 @@ $(document).ready(() => {
 
 	console.log($("main").children()[0]);
 	console.log($("main").children()[-1]);
-	console.log($("main").children()[$("main").children().length]);
+	console.log($("main").children()[$("main").children().length - 1]);
 	console.log($("main").children().eq(0));
 	console.log($("main").children().eq(-1));
-	console.log($("main").children().eq($("main").children().length));
+	console.log($("main").children().eq($("main").children().length - 1));
 	
 	$.ajaxSetup({async:true});
 })
