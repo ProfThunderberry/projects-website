@@ -39,15 +39,8 @@ $(document).ready(() => {
 	$("#" + fileId).addClass("active");
 	
 	// Format main
-	// $("main").children()[0].addClass("pad-top");
-	// $("main").children()[-1].addClass("pad-bottom");
-
-	console.log($("main").children()[0]);
-	console.log($("main").children()[-1]);
-	console.log($("main").children()[$("main").children().length - 1]);
-	console.log($("main").children().eq(0));
-	console.log($("main").children().eq(-1));
-	console.log($("main").children().eq($("main").children().length - 1));
+	$("main").children().eq(0).addClass("pad-top");
+	$("main").children().eq(-1).addClass("pad-bottom");
 	
 	$.ajaxSetup({async:true});
 })
