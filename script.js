@@ -38,5 +38,9 @@ $(document).ready(() => {
 	if (fileId === "index") $(".menu_item").attr("href", "pages/" + $(".menu_item").attr("href"));
 	$("#" + fileId).addClass("active");
 	
+	// Format main
+	$("main").children()[0].addClass("pad-top");
+	$("main").children()[-1].addClass("pad-bottom");
+	
 	$.ajaxSetup({async:true});
 })
