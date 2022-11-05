@@ -43,6 +43,10 @@ $(document).ready(() => {
 	// $("main").children()[-1].addClass("pad-bottom");
 	
 	console.log($("main").children());
+	console.log($("main").children(0));
+	console.log($("main").children(-1));
+	console.log($("main").children()[0]);
+	console.log($("main").children()[-1]);
 	
 	$.ajaxSetup({async:true});
 })
