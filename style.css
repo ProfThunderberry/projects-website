@@ -15,23 +15,23 @@ a:link {
 }
 
 a:hover {
-	color: #14ba7d;
+	color: #24ca8d;
 }
 
 a:active {
-	color: #24ca8d;
+	color: #44eaad;
 }
 
 a:visited {
 	color: #046a2d;
 }
 
-a:visited and a:hover {
-	color: #147a3d;
+a:visited:hover {
+	color: #248a4d;
 }
 
-a:visited and a:active {
-	color: #248a4d;
+a:visited:active {
+	color: #44aa6d;
 }
 
 
@@ -85,11 +85,11 @@ nav div a.active {
 	background-color: #04aa6d;
 }
 
-nav div a.active and nav div a:hover {
+nav div a.active:hover {
 	background-color: #14ba7d;
 }
 
-nav div a.active and nav div a:active {
+nav div a.active:active {
 	background-color: #24ca8d;
 }
 
