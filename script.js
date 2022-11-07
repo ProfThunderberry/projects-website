@@ -24,23 +24,24 @@ $(document).ready(() => {
 		for (let w = 0; w < titleWords.length; w++) {
 			titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[w].substring(1);
 		}
-		console.log($("title"));
-		$("title").text($("title").text() + " - " + titleWords.join(" "));
-	}
+		const title = titleWords.join(" ");
+		$("title").text($("title").text() + " - " + title);
+
+		// Format main
+		$("main").prepend("<h1 class=\"pad-top\">" + title + "</h1>");
+	} else $("main").prepend("<h1 class=\"pad-top\">Home Page</h1>");
+	$("main").children().eq(-1).addClass("pad-bottom");
+
 	$("#icon").attr("href", filePathPrefix + $("#icon").attr("href"));
 	$("#style").attr("href", filePathPrefix + $("#style").attr("href"));
 	
 	// Load navbar
 	$.get(navFilePath, (data) => {
-		$("nav").replaceWith(data);
+		$("main").first().before(data);
 	});
 	$("#index").attr("href", filePathPrefix + $("#index").attr("href"));
 	if (fileId === "index") $(".menu_item").attr("href", "pages/" + $(".menu_item").attr("href"));
 	$("#" + fileId).addClass("active");
-	
-	// Format main
-	$("main").children().eq(0).addClass("pad-top");
-	$("main").children().eq(-1).addClass("pad-bottom");
 	
 	$.ajaxSetup({async:true});
 })

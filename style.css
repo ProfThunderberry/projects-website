@@ -5,8 +5,38 @@ body {
 	color: #e2ddd2;
 }
 
-/* Navbar Stuff */
+a {
+	font-weight: bold;
+    text-decoration: none;
+}
 
+a:link {
+	color: #04aa6d;
+}
+
+a:hover {
+	color: #14ba7d;
+}
+
+a:active {
+	color: #24ca8d;
+}
+
+a:visited {
+	color: #046a2d;
+}
+
+a:visited and a:hover {
+	color: #147a3d;
+}
+
+a:visited and a:active {
+	color: #248a4d;
+}
+
+
+
+/* Navbar Stuff */
 @media screen and (max-width: 749px) {
 	nav div a.menu_item {
 		display: none
@@ -40,18 +70,30 @@ nav div a {
 	padding-right: 10px;
 	display: inline-block;
 	text-align: center;
-	text-decoration: none;
 	color: inherit;
-	font-weight: bold;
 }
 
 nav div a:hover {
 	background-color: #2d323d;
 }
 
+nav div a:active {
+	background-color: #3d424d;
+}
+
 nav div a.active {
 	background-color: #04aa6d;
 }
+
+nav div a.active and nav div a:hover {
+	background-color: #14ba7d;
+}
+
+nav div a.active and nav div a:active {
+	background-color: #24ca8d;
+}
+
+
 
 /* Main Text */
 main {
