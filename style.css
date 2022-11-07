@@ -73,12 +73,12 @@ nav div a, nav div a:visited {
 	color: #e2ddd2;
 }
 
-nav div a:hover {
+nav div a:hover, nav div a:hover:visited {
 	background-color: #2d323d;
 	color: inherit;
 }
 
-nav div a:active {
+nav div a:active, nav div a:active:visited {
 	background-color: #3d424d;
 	color: inherit;
 }
