@@ -64,7 +64,7 @@ nav div {
 	display: flex;
 }
 
-nav div a, nav div a:visited {
+nav div a, nav div a:link, nav div a:visited {
 	height: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
