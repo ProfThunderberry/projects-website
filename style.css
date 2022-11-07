@@ -75,22 +75,27 @@ nav div a {
 
 nav div a:hover {
 	background-color: #2d323d;
+	color: inherit;
 }
 
 nav div a:active {
 	background-color: #3d424d;
+	color: inherit;
 }
 
 nav div a.active {
 	background-color: #04aa6d;
+	color: inherit;
 }
 
 nav div a.active:hover {
 	background-color: #14ba7d;
+	color: inherit;
 }
 
 nav div a.active:active {
 	background-color: #24ca8d;
+	color: inherit;
 }
 
 
