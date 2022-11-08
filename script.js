@@ -37,7 +37,7 @@ function loadFeatures(filePathPrefix) {
 
 // Generates the navigation bar, with links to each page
 function genNav() {
-	const fileIds = ["computer_architecture", "neural_networks", "game_development"];
+	const fileIds = ["computer_architecture", "neural_networks", "game_development", "cryptography"];
 	for (let f = 0; f < fileIds.length; f++) {
 		const title = getTitle(fileIds[f]);
 		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
