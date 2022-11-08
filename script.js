@@ -1,52 +1,89 @@
-$(document).ready(() => {
-	$.ajaxSetup({async:false});
-	
+// Gets the id for the file of the current page
+function getFileId() {
 	// Work out where file is
 	const filePath = this.location.pathname;
 	const fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
 
-	let fileId;
-	if (fileName === "index.html" || fileName === "") fileId = "index";
-	else fileId = fileName.substring(0, fileName.length - ".html".length);
+	if (fileName === "") {
+		const fileId = "index";
+	} else {
+		const fileId = fileName.substring(0, fileName.length - ".html".length);
+	}
+	return fileId;
+}
 
-	let filePathPrefix = "../";
-	if (fileId === "index") filePathPrefix = "";
-	
-	const headFilePath = filePathPrefix + "features/head.html";
-	const navFilePath = filePathPrefix + "features/nav.html";
-	
-	// Load head
-	$.get(headFilePath, (data) => {
-		$("script").first().before(data);
-	});
-	if (fileId !== "index") {
-		let titleWords = fileId.split("_")
-		for (let w = 0; w < titleWords.length; w++) {
-			titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[w].substring(1);
-		}
-		const title = titleWords.join(" ");
-		$("title").text($("title").text() + " - " + title);
+// Gets the title for the current page using fileId
+function getTitle(fileId) {
+	let titleWords = fileId.split("_")
+	for (let w = 0; w < titleWords.length; w++) {
+		titleWords[w] = titleWords[w][0].toUpperCase() + titleWords[w].substring(1);
+	}
+	const title = titleWords.join(" ");
 
-		// Format main
-		$("main").prepend("<h1 class=\"pad-top\">" + title + "</h1>");
-	} else $("main").prepend("<h1 class=\"pad-top\">Home Page</h1>");
-	$("main").children().eq(-1).addClass("pad-bottom");
+	return title;
+}
 
-	$("#icon").attr("href", filePathPrefix + $("#icon").attr("href"));
-	$("#style").attr("href", filePathPrefix + $("#style").attr("href"));
+// Loads features from features folder to current page
+function loadFeatures(filePathPrefix) {
+	const features = ["head", "nav"]
+	const tagsAfter = ["script", "main"]
+	for (let f = 0; f < features.length; f++) {
+		$.get(filePathPrefix + "features/" + features[f] + ".html", (data) => {
+			$(tagsAfter[f]).first().before(data);
+		});
+	}
+}
+
+// Generates the navigation bar, with links to each page
+function genNav(filePathPrefix, title) {
+	const fileIds = ["computer_architecture", "neural_networks", "game_development"];
+	for (let f = 0; f < fileIds.length; f++) {
+		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + filePathPrefix + fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
+	}
+}
+
+// Main Function
+$(document).ready(() => {
+	$.ajaxSetup({async:false});
 	
-	// Load navbar
-	$.get(navFilePath, (data) => {
-		$("main").first().before(data);
-	});
-	$("#index").attr("href", filePathPrefix + $("#index").attr("href"));
+	const fileId = getFileId();
+	const title = getTitle(fileId);
+
 	if (fileId === "index") {
+
+		loadFeatures("");
+		genNav("", title);
+
+		// nav
 		let menuItems = $(".menu_item");
 		for (let i = 0; i < menuItems.length; i++) {
 			$(".menu_item").eq(i).attr("href", "pages/" + menuItems.eq(i).attr("href"))
 		};
+		
+		// main
+		$("main").prepend("<h1 class=\"pad-top\">Home Page</h1>");
 	}
+	else {
+		
+		loadFeatures("../");
+		genNav("../", title);
+		
+		// head
+		const hrefToChange = ["icon", "style"];
+		for (let i = 0; i < hrefToChange.length; i++) {
+			$("#" + hrefToChange[i]).attr("href", "../" + $("#" + hrefToChange[i]).attr("href"));
+		}
+		$("title").text($("title").text() + " - " + title);
+
+		// main
+		$("main").prepend("<h1 class=\"pad-top\">" + title + "</h1>");
+	}
+
+	// navbar
 	$("#" + fileId).addClass("active");
-	
+
+	// main
+	$("main").children().eq(-1).addClass("pad-bottom");
+
 	$.ajaxSetup({async:true});
 })
