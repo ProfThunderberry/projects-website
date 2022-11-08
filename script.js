@@ -4,10 +4,11 @@ function getFileId() {
 	const filePath = this.location.pathname;
 	const fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
 
+	let fileId;
 	if (fileName === "") {
-		const fileId = "index";
+		fileId = "index";
 	} else {
-		const fileId = fileName.substring(0, fileName.length - ".html".length);
+		fileId = fileName.substring(0, fileName.length - ".html".length);
 	}
 	return fileId;
 }
