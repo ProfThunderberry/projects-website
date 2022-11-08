@@ -40,7 +40,12 @@ $(document).ready(() => {
 		$("main").first().before(data);
 	});
 	$("#index").attr("href", filePathPrefix + $("#index").attr("href"));
-	if (fileId === "index") $(".menu_item").attr("href", "pages/" + $(".menu_item").attr("href"));
+	if (fileId === "index") {
+		let menuItems = $(".menu_item");
+		for (let i = 0; i < menuItems.length; i++) {
+			$(".menu_item").eq(i).attr("href", "pages/" + menuItems.eq(i).attr("href"))
+		};
+	}
 	$("#" + fileId).addClass("active");
 	
 	$.ajaxSetup({async:true});
