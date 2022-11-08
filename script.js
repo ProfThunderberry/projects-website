@@ -36,10 +36,11 @@ function loadFeatures(filePathPrefix) {
 }
 
 // Generates the navigation bar, with links to each page
-function genNav(filePathPrefix, title) {
+function genNav() {
 	const fileIds = ["computer_architecture", "neural_networks", "game_development"];
 	for (let f = 0; f < fileIds.length; f++) {
-		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + filePathPrefix + fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
+		const title = getTitle(fileIds[i]);
+		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
 	}
 }
 
@@ -53,7 +54,7 @@ $(document).ready(() => {
 	if (fileId === "index") {
 
 		loadFeatures("");
-		genNav("", title);
+		genNav();
 
 		// nav
 		let menuItems = $(".menu_item");
@@ -67,10 +68,10 @@ $(document).ready(() => {
 	else {
 		
 		loadFeatures("../");
-		genNav("../", title);
+		genNav();
 		
 		// head
-		const hrefToChange = ["icon", "style"];
+		const hrefToChange = ["icon", "style", "index"];
 		for (let i = 0; i < hrefToChange.length; i++) {
 			$("#" + hrefToChange[i]).attr("href", "../" + $("#" + hrefToChange[i]).attr("href"));
 		}
