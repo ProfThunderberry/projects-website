@@ -1,7 +1,10 @@
+/* Font */
+@import url(https://fonts.gstatic.com/l/font?kit=J7afnpV-BGlaFfdAhLEY6w&skey=a1029226f80653a8&v=v15);
+
 /* Style for entire website */
 body {
 	background-color: #0e1116;
-	font-family: calibri;
+	font-family: 'Calibri', sans-serif;
 	color: #e2ddd2;
 }
 
