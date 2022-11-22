@@ -108,15 +108,9 @@ main {
 	background-color: #1d222d;
 	padding-left: 5%;
 	padding-right: 5%;
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
 	margin: 10%;
-}
-
-.pad-top {
-	padding-top: 5%;
-}
-
-.pad-bottom {
-	padding-bottom: 5%;
 }
 
 h1 {

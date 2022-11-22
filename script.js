@@ -78,14 +78,11 @@ $(document).ready(() => {
 		$("title").text($("title").text() + " - " + title);
 
 		// main
-		$("main").prepend("<h1 class=\"pad-top\">" + title + "</h1>");
+		$("main").prepend("<h1>" + title + "</h1>");
 	}
 
 	// navbar
 	$("#" + fileId).addClass("active");
-
-	// main
-	$("main").children().eq(-1).addClass("pad-bottom");
 
 	$.ajaxSetup({async:true});
 })
