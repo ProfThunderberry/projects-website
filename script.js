@@ -36,11 +36,11 @@ function loadFeatures(filePathPrefix) {
 }
 
 // Generates the navigation bar, with links to each page
-function genNav() {
+function genNav(filePathPrefix) {
 	const fileIds = ["computer_architecture", "neural_networks", "game_development", "cryptography"];
 	for (let f = 0; f < fileIds.length; f++) {
 		const title = getTitle(fileIds[f]);
-		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
+		$("nav").children().first().append("<a id=\"" + fileIds[f] + "\" class=\"menu_item\" href=\"" + filePathPrefix + fileIds[f] + "/" +  fileIds[f] + ".html\" title=\"" + title + "\">" + title.toUpperCase() + "</a>");
 	}
 }
 
@@ -54,28 +54,24 @@ $(document).ready(() => {
 	if (fileId === "index") {
 
 		loadFeatures("");
-		genNav();
-
-		// nav
-		let menuItems = $(".menu_item");
-		for (let i = 0; i < menuItems.length; i++) {
-			$(".menu_item").eq(i).attr("href", "pages/" + menuItems.eq(i).attr("href"))
-		};
+		genNav("pages/");
 		
 		// main
 		$("main").prepend("<h1 class=\"pad-top\">Home Page</h1>");
 	}
 	else {
 		
-		loadFeatures("../");
-		genNav();
+		loadFeatures("../../");
+		genNav("../");
 		
 		// head
 		const hrefToChange = ["icon", "style", "index"];
 		for (let i = 0; i < hrefToChange.length; i++) {
-			$("#" + hrefToChange[i]).attr("href", "../" + $("#" + hrefToChange[i]).attr("href"));
+			$("#" + hrefToChange[i]).attr("href", "../../" + $("#" + hrefToChange[i]).attr("href"));
 		}
 		$("title").text($("title").text() + " - " + title);
+		$("head").append("<script src=\"" + fileId + ".js\"></script>");
+		$("#style").after("<link rel=\"stylesheet\" href=\"" + fileId + ".css\">");
 
 		// main
 		$("main").prepend("<h1>" + title + "</h1>");
